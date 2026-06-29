@@ -37,6 +37,9 @@ jobs:
       - name: Install MyST
         run: npm install -g mystmd
 
+      - name: Execute notebooks
+        run: myst execute
+
       - name: Build HTML
         run: myst build --html
         env:
