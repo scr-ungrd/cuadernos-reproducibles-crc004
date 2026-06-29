@@ -32,13 +32,16 @@ jobs:
         run: |
           pip install --quiet \
             requests pandas numpy matplotlib seaborn folium scipy \
-            jupyter ipykernel
+            jupyter ipykernel nbconvert
 
       - name: Install MyST
         run: npm install -g mystmd
 
-      - name: Execute notebooks
-        run: myst execute
+      - name: Execute notebook
+        run: |
+          jupyter nbconvert --to notebook --execute --inplace \
+            --ExecutePreprocessor.timeout=300 \
+            sismicidad-colombia.ipynb
 
       - name: Build HTML
         run: myst build --html
