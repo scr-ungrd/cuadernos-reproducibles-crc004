@@ -86,7 +86,7 @@ project:
   toc:
     - file: sismicidad-colombia.ipynb
 
-  jupyter: false
+  jupyter: true
 
   numbering:
     figures: true

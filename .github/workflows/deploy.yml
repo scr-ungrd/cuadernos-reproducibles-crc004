@@ -24,6 +24,16 @@ jobs:
         with:
           node-version: "20"
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          pip install --quiet \
+            requests pandas numpy matplotlib seaborn folium scipy \
+            jupyter ipykernel
+
       - name: Install MyST
         run: npm install -g mystmd
 
